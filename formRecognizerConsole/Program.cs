@@ -113,9 +113,6 @@ namespace formRecognizerConsole
                     f.IDFactura = Convert.ToInt32(Console.ReadLine());
                 }
 
-
-
-
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://apiproductorai.azurewebsites.net/api/factura");
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
