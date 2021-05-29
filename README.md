@@ -3,6 +3,6 @@
 ### Prerrequisitos
 - Visual Studio 2019
 ### Descargar el repositorio
-![Descargar repositorio](https://imgur.com/a/4dPc5X6)
+![Descargar repositorio](https://i.imgur.com/YyrBg8T.png)
 ### Abrir FormRecognizerExample.sln
-![Abrir formrecongizerexample](https://imgur.com/a/Mb6Vxre)
+![Abrir formrecongizerexample](https://i.imgur.com/TJLniyR.png)
