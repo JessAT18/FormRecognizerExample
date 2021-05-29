@@ -21,25 +21,13 @@ namespace formRecognizerConsole
         static void Main(string[] args)
         {
             string modelId = "ed259ecf-61b1-4a81-ad51-be352615ad3c";
-            Console.WriteLine("¡Bienvenido! A continuación escribe la ruta completa donde se encuentra tu directorio");
+            Console.WriteLine("¡Bienvenido! A continuación escribe la ruta completa donde se encuentra tu imagen");
             Console.WriteLine("Ejemplo: D:/Ejemplos/ejemplo2.jpg");
             string filePath = Console.ReadLine();
             IDictionary<string, string> factura = new Dictionary<string, string>();
             var analyzeFormTask = AnalyzeForm(modelId, filePath, factura);
             Task.WaitAll(analyzeFormTask);
 
-        }
-        static private FormRecognizerClient AuthenticateClient()
-        {
-            var credential = new AzureKeyCredential(apiKey);
-            var client = new FormRecognizerClient(new Uri(endpoint), credential);
-            return client;
-        }
-        static private FormTrainingClient AuthenticateTrainingClient()
-        {
-            var credential = new AzureKeyCredential(apiKey);
-            var client = new FormTrainingClient(new Uri(endpoint), credential);
-            return client;
         }
 
         // Analyze PDF form data
@@ -67,7 +55,7 @@ namespace formRecognizerConsole
 
             foreach (KeyValuePair<string, string> dato in factura)
             {
-                Console.WriteLine("Key: {0}, Value: {1}",
+                Console.WriteLine("{0}: {1}",
                 dato.Key, dato.Value);
             }
             Console.WriteLine("¿Deseas guardar los datos? Si/No");
@@ -103,9 +91,9 @@ namespace formRecognizerConsole
                 {
                     f.Placa = factura["Placa Vehiculo"];
                 }
-                if (factura.ContainsKey("Numero de factura"))
+                if (factura.ContainsKey("Numero de Factura"))
                 {
-                    f.IDFactura = System.Convert.ToInt32(factura["Numero de factura"]);
+                    f.IDFactura = System.Convert.ToInt32(factura["Numero de Factura"]);
                 }
                 else
                 {
@@ -119,9 +107,7 @@ namespace formRecognizerConsole
 
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-
                     string json = JsonConvert.SerializeObject(f);
-
                     streamWriter.Write(json);
                 }
 
