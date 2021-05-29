@@ -27,7 +27,8 @@ namespace formRecognizerConsole
             IDictionary<string, string> factura = new Dictionary<string, string>();
             var analyzeFormTask = AnalyzeForm(modelId, filePath, factura);
             Task.WaitAll(analyzeFormTask);
-
+            Console.WriteLine("Proceso terminado, presiona Enter para salir");
+            Console.ReadLine();
         }
 
         // Analyze PDF form data
