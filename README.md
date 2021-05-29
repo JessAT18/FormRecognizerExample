@@ -3,6 +3,7 @@
 ### Prerrequisitos
 - Visual Studio 2019
 ### Descargar el repositorio
+Podemos descargar el archivo de la siguiente forma, una vez hecho esto, para descomprimir el archivo zippeado pulsamos doble clic.
 ![Descargar repositorio](https://i.imgur.com/YyrBg8T.png)
 ### Abrir FormRecognizerExample.sln
 ![Abrir formrecongizerexample](https://i.imgur.com/TJLniyR.png)
